@@ -9,16 +9,12 @@ namespace BlockBuster_Tetris
 {
     public partial class View : Form
     {
-        string playerName;
         private PictureBox pauseImage;
+        AttributesCotroller music = null;
+
         public View()
         {
             InitializeComponent();
-            playerName = Microsoft.VisualBasic.Interaction.InputBox("Введите имя игрока", "Настройка игрока", "Новый игрок");
-            if (playerName == "")
-            {
-                playerName = "Новый игрок";
-            }
 
             pauseImage = new PictureBox();
             pauseImage.ImageLocation = "pause.png";
@@ -29,13 +25,16 @@ namespace BlockBuster_Tetris
             pauseImage.BackColor = Color.Transparent;
             this.Controls.Add(pauseImage);
 
+            music = new AttributesCotroller();
+            music.PlayMusic();
+
             this.KeyUp += new KeyEventHandler(keyFunc);
             Init();
         }
         public void Init()
         {
 
-            this.Text = "Тетрис: Текущий игрок - " + playerName;
+            //this.Text = "Тетрис: Текущий игрок - " + playerName;
             Controller.size = 35;
             Controller.score = 0;
             Controller.linesRemoved = 0;
@@ -45,10 +44,8 @@ namespace BlockBuster_Tetris
             label2.Text = "Lines: " + Controller.linesRemoved;
 
             WindowState = FormWindowState.Maximized;
-            // Загрузить картинку
             Image backgroundImage = Image.FromFile("Fon.jpg");
 
-            // Установить изображение в качестве фона формы
             this.BackgroundImage = backgroundImage;
 
             timer1.Interval = Controller.Interval;
@@ -151,5 +148,7 @@ namespace BlockBuster_Tetris
             Controller.ClearMap();
             Init();
         }
+
+        
     }
 }
