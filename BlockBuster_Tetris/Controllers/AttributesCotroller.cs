@@ -9,19 +9,31 @@ namespace BlockBuster_Tetris.Controllers
 {
     internal class AttributesCotroller
     {
-        Attributes music = null;
-        public AttributesCotroller()
+        Attributes attributes = null;
+        public AttributesCotroller(int width, int hight)
         {
-            music = new Attributes();
+            attributes = new Attributes(width, hight);
         }
         public void PlayMusic()
         {
-            music.Play();
+            attributes.Play();
         }
         public void StopMusic() 
         {
-            music.Stop();
+            attributes.Stop();
         }   
+        public object PictureVisibleTrue()
+        {
+           return attributes.PictureVisibleTrue();
+        }
+        public object PictureVisibleFalse()
+        {
+            return attributes.PictureVisibleFalse();
+        }
+        public object SetBackground()
+        {
+            return attributes.SetBackground();
+        }
     }
 }
 

@@ -49,8 +49,16 @@
   <ItemGroup>
     <Compile Include="Controllers\AttributesCotroller.cs" />
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\RecordsController.cs" />
     <Compile Include="Model\Attributes.cs" />
     <Compile Include="Model\Block.cs" />
+    <Compile Include="Model\Records.cs" />
+    <Compile Include="View_Records.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Records.Designer.cs">
+      <DependentUpon>View_Records.cs</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +67,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Menu.Designer.cs">
+      <DependentUpon>View_Menu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View_Records.resx">
+      <DependentUpon>View_Records.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +89,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View_Menu.resx">
+      <DependentUpon>View_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\on.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Turquoise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Fon5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Fon4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Fon6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

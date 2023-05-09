@@ -3,38 +3,39 @@ using System.Drawing;
 using System.Windows.Forms;
 using BlockBuster_Tetris.Model;
 using BlockBuster_Tetris.Controllers;
-
+using System.Threading;
 
 namespace BlockBuster_Tetris
 {
     public partial class View : Form
     {
-        private PictureBox pauseImage;
-        AttributesCotroller music = null;
-
-        public View()
+        AttributesCotroller attributes = null;
+        Thread thread = null;
+        RecordsController records = null;
+        string nameUser = null;
+        public View(string name)
         {
             InitializeComponent();
+            
+            nameUser = name;
 
-            pauseImage = new PictureBox();
-            pauseImage.ImageLocation = "pause.png";
-            pauseImage.Anchor = AnchorStyles.None;
-            pauseImage.Size = new Size(300, 250); 
-            pauseImage.Location = new Point((this.ClientSize.Width - pauseImage.Width) / 2, (this.ClientSize.Height - pauseImage.Height) / 2);
-            pauseImage.Visible = false;
-            pauseImage.BackColor = Color.Transparent;
-            this.Controls.Add(pauseImage);
+            attributes = new AttributesCotroller(ClientSize.Width, ClientSize.Height);
 
-            music = new AttributesCotroller();
-            music.PlayMusic();
+            thread = new Thread(() =>
+            {
+               // attributes.PlayMusic();
+            });
+            thread.Start();
 
-            this.KeyUp += new KeyEventHandler(keyFunc);
+            Controls.Add((Control)attributes.PictureVisibleFalse());
+
+            records = new RecordsController();
+            
+            KeyUp += new KeyEventHandler(keyFunc);
             Init();
         }
         public void Init()
         {
-
-            //this.Text = "Тетрис: Текущий игрок - " + playerName;
             Controller.size = 35;
             Controller.score = 0;
             Controller.linesRemoved = 0;
@@ -44,14 +45,10 @@ namespace BlockBuster_Tetris
             label2.Text = "Lines: " + Controller.linesRemoved;
 
             WindowState = FormWindowState.Maximized;
-            Image backgroundImage = Image.FromFile("Fon.jpg");
-
-            this.BackgroundImage = backgroundImage;
-
+            BackgroundImage = (Image)attributes.SetBackground();
             timer1.Interval = Controller.Interval;
             timer1.Tick += new EventHandler(update);
             timer1.Start();
-
 
             Invalidate();
         }
@@ -95,12 +92,12 @@ namespace BlockBuster_Tetris
                 case Keys.Escape:
                     if (timer1.Enabled)
                     {
-                        pauseImage.Visible = true;
+                        attributes.PictureVisibleTrue();
                         timer1.Stop();
                     }
                     else
                     {
-                        pauseImage.Visible = false;
+                        attributes.PictureVisibleFalse();
                         timer1.Start();
                     }
                     break;
@@ -110,6 +107,7 @@ namespace BlockBuster_Tetris
 
         private void update(object sender, EventArgs e)
         {
+
             Controller.ResetArea();
             if (!Controller.Collide())
             {
@@ -127,6 +125,7 @@ namespace BlockBuster_Tetris
                     timer1.Tick -= new EventHandler(update);
                     timer1.Stop();
                     MessageBox.Show("Ваш результат: " + Controller.score);
+                    records.SaveRecords(nameUser);
                     Init();
                 }
             }
@@ -149,6 +148,10 @@ namespace BlockBuster_Tetris
             Init();
         }
 
-        
+        private void View_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            attributes.StopMusic();
+            thread.Abort(); 
+        }
     }
 }

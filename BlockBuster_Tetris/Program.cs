@@ -16,7 +16,7 @@ namespace BlockBuster_Tetris
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View());
+            Application.Run(new View_Menu());
         }
     }
 }

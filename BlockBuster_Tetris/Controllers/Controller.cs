@@ -1,4 +1,5 @@
 ﻿using BlockBuster_Tetris.Model;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,37 +22,39 @@ namespace BlockBuster_Tetris.Controllers
         public static Image img_Z_ = Image.FromFile("Yellow.png");
         public static void ShowNextShape(Graphics e)
         {
+            e.FillRectangle(Brushes.White, new Rectangle(977, 130, 150, 150));
+
             for (int i = 0; i < currentShape.sizeNextMatrix; i++)
             {
                 for (int j = 0; j < currentShape.sizeNextMatrix; j++)
                 {
                     if (currentShape.nextMatrix[i, j] == 1)
                     {
-                        e.DrawImage(img_I, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_I, new Rectangle(968 + j * (size) + 1, 135 + i * (size) + 1, size - 1, size - 1));
                     }
                     if (currentShape.nextMatrix[i, j] == 2)
                     {
-                        e.DrawImage(img_Z, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_Z, new Rectangle(983 + j * (size) + 1, 149 + i * (size) + 1, size - 1, size - 1));
                     }
                     if (currentShape.nextMatrix[i, j] == 3)
                     {
-                        e.DrawImage(img_T, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_T, new Rectangle(1000 + j * (size) + 1, 140 + i * (size) + 1, size - 1, size - 1));
                     }
                     if (currentShape.nextMatrix[i, j] == 4)
                     {
-                        e.DrawImage(img_L, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_L, new Rectangle(1020 + j * (size) + 1, 150 + i * (size) + 1, size - 1, size - 1));
                     }
                     if (currentShape.nextMatrix[i, j] == 5)
                     {
-                        e.DrawImage(img_Square, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_Square, new Rectangle(1018 + j * (size) + 1, 168 + i * (size) + 1, size - 1, size - 1));
                     }
                     if (currentShape.nextMatrix[i, j] == 6)
                     {
-                        e.DrawImage(img_Z_, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_Z_, new Rectangle(983 + j * (size) + 1,  149 + i * (size) + 1, size - 1, size - 1));
                     }
                     if (currentShape.nextMatrix[i, j] == 7)
                     {
-                        e.DrawImage(img_J, new Rectangle(1000 + j * (size) + 1, 90 + i * (size) + 1, size - 1, size - 1));
+                        e.DrawImage(img_J, new Rectangle(980 + j * (size) + 1, 150 + i * (size) + 1, size - 1, size - 1));
                     }
                 }
             }
@@ -114,7 +117,7 @@ namespace BlockBuster_Tetris.Controllers
             int x = (Screen.PrimaryScreen.Bounds.Width - 10 * size) / 2;
             int y = (Screen.PrimaryScreen.Bounds.Height - 20 * size) / 2;
 
-            g.FillRectangle(Brushes.DimGray, new Rectangle(x, y, 10 * size, 20 * size));
+            g.FillRectangle(Brushes.LightSlateGray, new Rectangle(x, y, 10 * size, 20 * size));
 
             for (int i = 0; i <= 20; i++)
             {
@@ -257,4 +260,5 @@ namespace BlockBuster_Tetris.Controllers
             }
         }
     }
+    
 }
