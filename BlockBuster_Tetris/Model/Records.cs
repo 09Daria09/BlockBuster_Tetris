@@ -15,44 +15,44 @@ namespace BlockBuster_Tetris.Model
 
         public void SaveRecords(string playerName)
         {
-            List<string> recordsArray = new List<string>(LoadRecord());
-            bool isNameExistsInRecords = false;
-
-            for (int i = 0; i < recordsArray.Count; i++)
+            List<string> recordsArray = new List<string>(LoadRecords())
             {
-                string[] record = recordsArray[i].Split('|');
-
-                if (playerName == record[0])
-                {
-                    isNameExistsInRecords = true;
-                    recordsArray.RemoveAt(i);
-                    recordsArray.Add(playerName + "|" + Controller.score + "|" + Controller.linesRemoved);
-                }
-            }
-            if (!isNameExistsInRecords)
-            {
-                recordsArray.Add(playerName + "|" + Controller.score + "|" + Controller.linesRemoved);
-            }
-            using (StreamWriter writer = new StreamWriter(recordPath, true))
-            {
-                foreach (string record in recordsArray)
-                {
-                    writer.WriteLine(record);
-                }
-            }
-
+                playerName + "|" + Controller.score + "|" + Controller.linesRemoved
+            };
+            recordsArray.Sort(new RecordsComparer());
+            File.WriteAllLines(recordPath, recordsArray);
         }
 
-        public IEnumerable<string> LoadRecord()
+        public IEnumerable<string> LoadRecords()
         {
             string[] recordsArray = File.ReadAllLines(recordPath);
-            foreach (string line in recordsArray)
+            return recordsArray;
+        }
+        public class RecordsComparer : IComparer<string>
+        {
+            public int Compare(string x, string y)
             {
-                yield return line;
+                string[] xFields = x.Split('|');
+                string[] yFields = y.Split('|');
+
+                int xScore = int.Parse(xFields[1]);
+                int yScore = int.Parse(yFields[1]);
+
+                if (xScore > yScore)
+                {
+                    return -1; 
+                }
+                else if (xScore < yScore)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
-
-        public List<Record> LoadRecords()
+        public List<Record> LoadRecord()
         {
             List<Record> recordsList = new List<Record>();
             string[] recordsArray = File.ReadAllLines(recordPath);
@@ -77,7 +77,7 @@ namespace BlockBuster_Tetris.Model
         {
             listView.Items.Clear();
 
-            List<Record> records = LoadRecords();
+            List<Record> records = LoadRecord();
 
             for (int i = 0; i < records.Count; i++)
             {

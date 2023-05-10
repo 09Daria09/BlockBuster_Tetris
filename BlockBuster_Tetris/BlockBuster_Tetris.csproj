@@ -53,6 +53,12 @@
     <Compile Include="Model\Attributes.cs" />
     <Compile Include="Model\Block.cs" />
     <Compile Include="Model\Records.cs" />
+    <Compile Include="Model\Settings.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View_Records.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     <Compile Include="View_Menu.Designer.cs">
       <DependentUpon>View_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Settings.Designer.cs">
+      <DependentUpon>View_Settings.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View_Records.resx">
       <DependentUpon>View_Records.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,16 +93,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View_Menu.resx">
       <DependentUpon>View_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Settings.resx">
+      <DependentUpon>View_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +129,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Fon6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\WhiteCub.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Check.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\OnCheck.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\OnCheck.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

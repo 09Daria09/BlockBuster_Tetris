@@ -17,15 +17,21 @@ namespace BlockBuster_Tetris
         {
             InitializeComponent();
             
+
             nameUser = name;
 
             attributes = new AttributesCotroller(ClientSize.Width, ClientSize.Height);
 
             thread = new Thread(() =>
             {
-               // attributes.PlayMusic();
+               attributes.PlayMusic();
             });
             thread.Start();
+
+            if(!Settings.SoundMult)
+            {
+                thread.Abort();
+            }
 
             Controls.Add((Control)attributes.PictureVisibleFalse());
 
@@ -150,6 +156,8 @@ namespace BlockBuster_Tetris
 
         private void View_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timer1.Stop();
+            Controller.ClearMap();
             attributes.StopMusic();
             thread.Abort(); 
         }

@@ -34,5 +34,11 @@ namespace BlockBuster_Tetris
             View_Records view_Records = new View_Records();
             view_Records.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            View_Settings view_Settings = new View_Settings();
+            view_Settings.Show();
+        }
     }
 }

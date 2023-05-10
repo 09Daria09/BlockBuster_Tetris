@@ -20,12 +20,12 @@ namespace BlockBuster_Tetris
             WindowState = FormWindowState.Maximized;
             records = new RecordsController();
 
-
-            int columnWidth = 300;
+            int columnWidth = 320;
             listView1.Columns.Add("Место", columnWidth);
             listView1.Columns.Add("Игрок", columnWidth);
             listView1.Columns.Add("Очки", columnWidth);
             listView1.Columns.Add("Линии", columnWidth);
+
             records.ShowRecords(listView1);
         }
     }

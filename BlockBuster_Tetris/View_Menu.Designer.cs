@@ -92,6 +92,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Настройки";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // View_Menu
             // 
