@@ -16,28 +16,44 @@ namespace BlockBuster_Tetris
         public View(string name)
         {
             InitializeComponent();
-            
+
 
             nameUser = name;
-
             attributes = new AttributesCotroller(ClientSize.Width, ClientSize.Height);
-
             thread = new Thread(() =>
             {
-               attributes.PlayMusic();
+                attributes.PlayMusic();
             });
             thread.Start();
-
-            if(!Settings.SoundMult)
+            if (!Settings.SoundMult)
             {
                 thread.Abort();
             }
-
             Controls.Add((Control)attributes.PictureVisibleFalse());
-
             records = new RecordsController();
-            
             KeyUp += new KeyEventHandler(keyFunc);
+
+            if (Settings.ThemeMult)
+            {
+                this.BackgroundImage = Image.FromFile("Fon6.jpg");
+                label1.BackColor = Color.White;
+                label1.ForeColor = Color.Black;
+                label2.BackColor = Color.White;
+                label2.ForeColor = Color.Black;
+                label3.BackColor = Color.White;
+                label3.ForeColor = Color.Black;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile("FonDark.jpg");
+                label1.BackColor = Color.Black;
+                label1.ForeColor = Color.White;
+                label2.BackColor = Color.Black;
+                label2.ForeColor = Color.White;
+                label3.BackColor = Color.Black;
+                label3.ForeColor = Color.White;
+            }
+
             Init();
         }
         public void Init()
@@ -51,7 +67,7 @@ namespace BlockBuster_Tetris
             label2.Text = "Lines: " + Controller.linesRemoved;
 
             WindowState = FormWindowState.Maximized;
-            BackgroundImage = (Image)attributes.SetBackground();
+            //BackgroundImage = (Image)attributes.SetBackground();
             timer1.Interval = Controller.Interval;
             timer1.Tick += new EventHandler(update);
             timer1.Start();
@@ -159,7 +175,7 @@ namespace BlockBuster_Tetris
             timer1.Stop();
             Controller.ClearMap();
             attributes.StopMusic();
-            thread.Abort(); 
+            thread.Abort();
         }
     }
 }

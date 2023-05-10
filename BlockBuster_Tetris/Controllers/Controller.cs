@@ -22,7 +22,14 @@ namespace BlockBuster_Tetris.Controllers
         public static Image img_Z_ = Image.FromFile("Yellow.png");
         public static void ShowNextShape(Graphics e)
         {
-            e.FillRectangle(Brushes.White, new Rectangle(977, 130, 150, 150));
+            if (Settings.ThemeMult)
+            {
+                e.FillRectangle(Brushes.White, new Rectangle(977, 130, 150, 150));
+            }
+            else
+            {
+                e.FillRectangle(Brushes.Black, new Rectangle(977, 130, 150, 150));
+            }
 
             for (int i = 0; i < currentShape.sizeNextMatrix; i++)
             {

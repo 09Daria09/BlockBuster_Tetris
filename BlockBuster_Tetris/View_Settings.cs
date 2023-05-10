@@ -33,7 +33,27 @@ namespace BlockBuster_Tetris
             {
                 button3.Image = Image.FromFile("cloud.bmp");
             }
-            this.BackgroundImage = Image.FromFile("Fon6.jpg");
+
+            if (Settings.ThemeMult)
+            {
+                this.BackgroundImage = Image.FromFile("Fon6.jpg");
+                button1.BackColor = Color.White;
+                textBox1.BackColor = Color.White;
+                textBox2.BackColor = Color.White;
+                button1.ForeColor = Color.Black;
+                textBox1.ForeColor = Color.Black;
+                textBox2.ForeColor = Color.Black;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile("FonDark3.jpg");
+                button1.BackColor = Color.Black;
+                textBox1.BackColor = Color.Black;
+                textBox2.BackColor = Color.Black;
+                button1.ForeColor = Color.White;
+                textBox1.ForeColor = Color.White;
+                textBox2.ForeColor = Color.White;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,10 +75,26 @@ namespace BlockBuster_Tetris
             if (Settings.ThemeMult)
             {
                 button3.Image = Image.FromFile("sun.bmp");
+
+                this.BackgroundImage = Image.FromFile("Fon6.jpg");
+                button1.BackColor = Color.White;
+                textBox1.BackColor = Color.White;
+                textBox2.BackColor = Color.White;
+                button1.ForeColor = Color.Black;
+                textBox1.ForeColor = Color.Black;
+                textBox2.ForeColor = Color.Black;
             }
             else
             {
                 button3.Image = Image.FromFile("cloud.bmp");
+
+                this.BackgroundImage = Image.FromFile("FonDark3.jpg");
+                button1.BackColor = Color.Black;
+                textBox1.BackColor = Color.Black;
+                textBox2.BackColor = Color.Black;
+                button1.ForeColor = Color.White;
+                textBox1.ForeColor = Color.White;
+                textBox2.ForeColor = Color.White;
             }
         }
 

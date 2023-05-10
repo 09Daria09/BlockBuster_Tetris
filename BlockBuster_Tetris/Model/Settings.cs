@@ -11,7 +11,6 @@ namespace BlockBuster_Tetris.Model
     {
         private static bool soundMult = true;
         private static bool themeMult = true;
-
         public static bool SoundMult
         {
             get { return soundMult; }
