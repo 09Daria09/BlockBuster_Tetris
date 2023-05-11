@@ -30,7 +30,7 @@ namespace BlockBuster_Tetris
             }
             else
             {
-                this.BackgroundImage = Image.FromFile("FonDark.jpg");
+                this.BackgroundImage = Image.FromFile("FonDark3.jpg");
                 listView1.BackgroundImage = Image.FromFile("FonDark.jpg");
                 listView1.ForeColor = Color.White; 
                 listView1.BackColor = Color.White;

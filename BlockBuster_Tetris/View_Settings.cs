@@ -17,6 +17,11 @@ namespace BlockBuster_Tetris
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
+
+            comboBox1.Items.Add("Джаз");
+            comboBox1.Items.Add("Кантри");
+            comboBox1.Items.Add("Техно");
+            comboBox1.Items.Add("Классика");
             if (Settings.SoundMult)
             {
                 button2.Image = Image.FromFile("Check.jpg");
@@ -43,6 +48,8 @@ namespace BlockBuster_Tetris
                 button1.ForeColor = Color.Black;
                 textBox1.ForeColor = Color.Black;
                 textBox2.ForeColor = Color.Black;
+                comboBox1.ForeColor = Color.Black;
+                comboBox1.BackColor = Color.White;
             }
             else
             {
@@ -53,6 +60,8 @@ namespace BlockBuster_Tetris
                 button1.ForeColor = Color.White;
                 textBox1.ForeColor = Color.White;
                 textBox2.ForeColor = Color.White;
+                comboBox1.ForeColor = Color.White;
+                comboBox1.BackColor = Color.Black;
             }
         }
 
@@ -83,6 +92,8 @@ namespace BlockBuster_Tetris
                 button1.ForeColor = Color.Black;
                 textBox1.ForeColor = Color.Black;
                 textBox2.ForeColor = Color.Black;
+                comboBox1.ForeColor = Color.Black;
+                comboBox1.BackColor = Color.White;
             }
             else
             {
@@ -95,12 +106,19 @@ namespace BlockBuster_Tetris
                 button1.ForeColor = Color.White;
                 textBox1.ForeColor = Color.White;
                 textBox2.ForeColor = Color.White;
+                comboBox1.ForeColor = Color.White;
+                comboBox1.BackColor = Color.Black;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Close();  
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Settings.SelectedClient = comboBox1.SelectedItem.ToString();
         }
     }
 }
