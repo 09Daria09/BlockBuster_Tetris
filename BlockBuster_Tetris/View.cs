@@ -60,11 +60,11 @@ namespace BlockBuster_Tetris
         {
             Controller.size = 35;
             Controller.score = 0;
-            Controller.linesRemoved = 0;
+            Controller.lines = 0;
             Controller.currentShape = new Block(3, 0);
             Controller.Interval = 1000;
-            label1.Text = "Score: " + Controller.score;
-            label2.Text = "Lines: " + Controller.linesRemoved;
+            label1.Text = "Очки: " + Controller.score;
+            label2.Text = "Линии: " + Controller.lines;
 
             WindowState = FormWindowState.Maximized;
             timer1.Interval = Controller.Interval;
@@ -145,9 +145,18 @@ namespace BlockBuster_Tetris
                     Controller.ClearMap();
                     timer1.Tick -= new EventHandler(update);
                     timer1.Stop();
-                    MessageBox.Show("Ваш результат: " + Controller.score);
+                    Result result = new Result(Controller.score.ToString(), Controller.lines.ToString());
+                    DialogResult res = result.ShowDialog();
                     records.SaveRecords(nameUser);
-                    Init();
+                    if (res == DialogResult.Cancel)
+                    {
+                        Close();
+                        return;
+                    }
+                    if (res == DialogResult.OK)
+                    {
+                        Init();
+                    }
                 }
             }
             Controller.Merge();

@@ -10,7 +10,7 @@ namespace BlockBuster_Tetris.Controllers
         public static Block currentShape;
         public static int size;
         public static int[,] map = new int[20, 10];
-        public static int linesRemoved;
+        public static int lines;
         public static int score;
         public static int Interval;
         public static Image img_I = Image.FromFile("Turquoise.png");
@@ -164,16 +164,27 @@ namespace BlockBuster_Tetris.Controllers
             {
                 score += 10 * (i + 1);
             }
-            linesRemoved += curRemovedLines;
+            lines += curRemovedLines;
 
-            if (linesRemoved % 5 == 0)
+            if (lines % 5 == 0)
             {
                 if (Interval > 60)
                     Interval -= 10;
             }
-
-            label1.Text = "Score: " + score;
-            label2.Text = "Lines: " + linesRemoved;
+            if(Interval == 0)
+            {
+                Interval = 0;
+            }
+            else if(score != 0)
+            {
+                Interval -= 5;
+            }
+            else
+            {
+                Interval = 1000;
+            }
+            label1.Text = "Очки: " + score;
+            label2.Text = "Линии: " + lines;
         }
 
         public static bool IsIntersects()

@@ -121,14 +121,17 @@
   <data name="Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="on" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\on.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OnCheck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\OnCheck.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Check.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OnCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\OnCheck.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fon61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Fon6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Fon5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,6 +142,9 @@
   <data name="Check1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Check.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Fon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Fon4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,13 +154,13 @@
   <data name="Fon62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Fon6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fon61" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Fon6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\on.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Turquoise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Turquoise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OnCheck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\OnCheck.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

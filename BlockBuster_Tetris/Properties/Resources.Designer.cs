@@ -63,6 +63,16 @@ namespace BlockBuster_Tetris.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue {
             get {
                 object obj = ResourceManager.GetObject("Blue", resourceCulture);
@@ -136,6 +146,16 @@ namespace BlockBuster_Tetris.Properties {
         internal static System.Drawing.Bitmap Fon62 {
             get {
                 object obj = ResourceManager.GetObject("Fon62", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap key {
+            get {
+                object obj = ResourceManager.GetObject("key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

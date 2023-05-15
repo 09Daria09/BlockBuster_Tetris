@@ -35,6 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -60,6 +61,7 @@
             this.textBox1.Size = new System.Drawing.Size(208, 56);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Музыка";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
             // 
@@ -91,6 +93,7 @@
             this.textBox2.Size = new System.Drawing.Size(206, 56);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "Тема";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox1
             // 
@@ -104,12 +107,25 @@
             this.comboBox1.Text = "Стиль музыки";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button4.Font = new System.Drawing.Font("Monotype Corsiva", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button4.Location = new System.Drawing.Point(262, 62);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(307, 61);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Управление";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // View_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BlockBuster_Tetris.Properties.Resources.Fon6;
             this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
@@ -132,5 +148,6 @@
         public System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
     }
 }

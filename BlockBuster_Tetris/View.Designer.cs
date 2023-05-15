@@ -44,9 +44,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(538, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 52);
+            this.label2.Size = new System.Drawing.Size(146, 52);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Линии:";
             // 
             // timer1
             // 
@@ -60,9 +60,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(1301, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 52);
+            this.label3.Size = new System.Drawing.Size(211, 52);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Next:";
+            this.label3.Text = "Следующая";
             // 
             // label1
             // 
@@ -72,9 +72,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(538, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 52);
+            this.label1.Size = new System.Drawing.Size(122, 52);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Очки:";
             // 
             // View
             // 

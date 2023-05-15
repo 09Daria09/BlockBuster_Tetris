@@ -35,7 +35,7 @@ namespace BlockBuster_Tetris
             }
             else
             {
-                this.BackgroundImage = Image.FromFile("FonDark.jpg");
+                this.BackgroundImage = Image.FromFile("FonDark3.jpg");
                 button1.BackColor = Color.Black;
                 button2.BackColor = Color.Black;
                 button3.BackColor = Color.Black;

@@ -43,6 +43,7 @@ namespace BlockBuster_Tetris
             {
                 this.BackgroundImage = Image.FromFile("Fon6.jpg");
                 button1.BackColor = Color.White;
+                button4.BackColor = Color.White;
                 textBox1.BackColor = Color.White;
                 textBox2.BackColor = Color.White;
                 button1.ForeColor = Color.Black;
@@ -50,6 +51,7 @@ namespace BlockBuster_Tetris
                 textBox2.ForeColor = Color.Black;
                 comboBox1.ForeColor = Color.Black;
                 comboBox1.BackColor = Color.White;
+                button4.ForeColor = Color.Black;
             }
             else
             {
@@ -62,6 +64,8 @@ namespace BlockBuster_Tetris
                 textBox2.ForeColor = Color.White;
                 comboBox1.ForeColor = Color.White;
                 comboBox1.BackColor = Color.Black;
+                button4.BackColor = Color.Black;
+                button4.ForeColor = Color.White;
             }
         }
 
@@ -94,6 +98,8 @@ namespace BlockBuster_Tetris
                 textBox2.ForeColor = Color.Black;
                 comboBox1.ForeColor = Color.Black;
                 comboBox1.BackColor = Color.White;
+                button4.BackColor = Color.White;
+                button4.ForeColor = Color.Black;
             }
             else
             {
@@ -108,6 +114,8 @@ namespace BlockBuster_Tetris
                 textBox2.ForeColor = Color.White;
                 comboBox1.ForeColor = Color.White;
                 comboBox1.BackColor = Color.Black;
+                button4.BackColor = Color.Black;
+                button4.ForeColor = Color.White;
             }
         }
 
@@ -119,6 +127,12 @@ namespace BlockBuster_Tetris
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Settings.SelectedClient = comboBox1.SelectedItem.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu_Control menu_Control = new Menu_Control();
+            menu_Control.ShowDialog();
         }
     }
 }

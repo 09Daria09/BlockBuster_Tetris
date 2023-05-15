@@ -17,7 +17,7 @@ namespace BlockBuster_Tetris.Model
         {
             List<string> recordsArray = new List<string>(LoadRecords())
             {
-                playerName + "|" + Controller.score + "|" + Controller.linesRemoved
+                playerName + "|" + Controller.score + "|" + Controller.lines
             };
             recordsArray.Sort(new RecordsComparer());
             File.WriteAllLines(recordPath, recordsArray);
