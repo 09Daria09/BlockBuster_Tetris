@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(538, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 53);
+            this.label2.Size = new System.Drawing.Size(118, 52);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
@@ -59,7 +60,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(1301, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 53);
+            this.label3.Size = new System.Drawing.Size(115, 52);
             this.label3.TabIndex = 2;
             this.label3.Text = "Next:";
             // 
@@ -71,7 +72,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(538, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 53);
+            this.label1.Size = new System.Drawing.Size(118, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -84,6 +85,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "View";
             this.Text = "BlockBuster";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.View_FormClosed);

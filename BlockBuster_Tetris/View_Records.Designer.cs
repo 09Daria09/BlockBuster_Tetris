@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Records));
             this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             this.BackgroundImage = global::BlockBuster_Tetris.Properties.Resources.Fon61;
             this.ClientSize = new System.Drawing.Size(800, 507);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "View_Records";
             this.Text = "Records";
             this.ResumeLayout(false);

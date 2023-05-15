@@ -67,7 +67,6 @@ namespace BlockBuster_Tetris
             label2.Text = "Lines: " + Controller.linesRemoved;
 
             WindowState = FormWindowState.Maximized;
-            //BackgroundImage = (Image)attributes.SetBackground();
             timer1.Interval = Controller.Interval;
             timer1.Tick += new EventHandler(update);
             timer1.Start();
